@@ -2,7 +2,7 @@
 {
     class Program
     {
-        static IEnumerable<string> query = null!;
+        static IEnumerable<string> listaOrdenada = null!;
         static string[] municipios = File.ReadAllLines("Cidades.csv");
 
         static void Main(string[] args)
@@ -11,9 +11,9 @@
 
             switch (opcao)
             {
-                case 1: query = OrdenarCidadesOrdemAlfabetica(); break;
-                case 2: query = OrdenarCidadesEstado(); break;
-                case 3: query = OrdenarCidadesEstado(); break;
+                case 1: listaOrdenada = OrdenarCidadesOrdemAlfabetica(); break;
+                case 2: listaOrdenada = OrdenarCidadesEstado(); break;
+                case 3: listaOrdenada = OrdenarCidadesEstado(); break;
                 default: break;
             }
 
@@ -34,7 +34,7 @@
 
             for (int i = 0; i < municipios.Length; i++)
             {
-                if (query.ElementAt(i).StartsWith($" {estado}", StringComparison.InvariantCultureIgnoreCase))
+                if (listaOrdenada.ElementAt(i).StartsWith($" {estado}", StringComparison.InvariantCultureIgnoreCase))
                 {
                     encontrou = true;
                     if (encontrou && controleMensagemAguarde == 0)
@@ -43,10 +43,10 @@
                         controleMensagemAguarde++;
                     }
 
-                    Console.WriteLine(query.ElementAt(i));
+                    Console.WriteLine(listaOrdenada.ElementAt(i));
                 }
 
-                if (encontrou && query.ElementAt(i)[2] != estado[1])
+                if (encontrou && listaOrdenada.ElementAt(i)[2] != estado[1])
                 {
                     break;
                 }
@@ -93,7 +93,7 @@
         {
             Console.Clear();
 
-            foreach (var item in query)
+            foreach (var item in listaOrdenada)
             {
                 Console.WriteLine(item);
             }
