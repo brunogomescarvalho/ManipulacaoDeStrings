@@ -30,17 +30,17 @@
             Console.WriteLine("Aguarde...Carregando dados!");
 
             bool encontrou = false;
-            int controleMensagemAguarde = 0;
+            bool enviandoMenssagemAguarde = true;
 
             for (int i = 0; i < municipios.Length; i++)
             {
                 if (listaOrdenada.ElementAt(i).StartsWith($" {estado}", StringComparison.InvariantCultureIgnoreCase))
                 {
                     encontrou = true;
-                    if (encontrou && controleMensagemAguarde == 0)
+                    if (encontrou && enviandoMenssagemAguarde)
                     {
                         Console.Clear();
-                        controleMensagemAguarde++;
+                        enviandoMenssagemAguarde = false;
                     }
 
                     Console.WriteLine(listaOrdenada.ElementAt(i));
