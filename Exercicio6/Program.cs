@@ -19,7 +19,7 @@
                     query = OrdenarCidadesEstado();
                     break;
                 case 3:
-                    query = OrdenarCidadesEstadoSolicitado();
+                    query = OrdenarCidadesEstado();
                     break;
                 default:
                     break;
@@ -27,6 +27,7 @@
 
             if (opcao == 3)
             {
+                SolicitarEstado();
                 MostrarCidadesEstadoSolicitado();
             }
             else
@@ -35,12 +36,12 @@
             }
         }
 
-
         static void MostrarCidadesEstadoSolicitado()
         {
-            bool encontrou = false;
             Console.Clear();
             Console.WriteLine("Aguarde...Carregando dados!");
+
+            bool encontrou = false;
             int controleMensagemAguarde = 0;
 
             for (int i = 0; i < municipios.Length; i++)
@@ -81,12 +82,6 @@
         }
 
 
-        static IEnumerable<string> OrdenarCidadesEstadoSolicitado()
-        {
-            estado = SolicitarEstado();
-            return OrdenarCidadesEstado();
-        }
-
         static byte MostrarMenu()
         {
             byte opcao;
@@ -116,11 +111,11 @@
             }
         }
 
-        static string SolicitarEstado()
+        static void SolicitarEstado()
         {
             Console.Clear();
             Console.WriteLine("Informe o estado:");
-            return Console.ReadLine()!;
+            estado = Console.ReadLine()!;
         }
 
     }
