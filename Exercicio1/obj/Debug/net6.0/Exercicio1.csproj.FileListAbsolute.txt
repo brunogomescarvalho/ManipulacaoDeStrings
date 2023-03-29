@@ -1,0 +1,15 @@
+C:\AP\Modulo_1\10 - ManipulacaoDeStrings\Exercicio1\bin\Debug\net6.0\Exercicio1.exe
+C:\AP\Modulo_1\10 - ManipulacaoDeStrings\Exercicio1\bin\Debug\net6.0\Exercicio1.deps.json
+C:\AP\Modulo_1\10 - ManipulacaoDeStrings\Exercicio1\bin\Debug\net6.0\Exercicio1.runtimeconfig.json
+C:\AP\Modulo_1\10 - ManipulacaoDeStrings\Exercicio1\bin\Debug\net6.0\Exercicio1.dll
+C:\AP\Modulo_1\10 - ManipulacaoDeStrings\Exercicio1\bin\Debug\net6.0\Exercicio1.pdb
+C:\AP\Modulo_1\10 - ManipulacaoDeStrings\Exercicio1\obj\Debug\net6.0\Exercicio1.csproj.AssemblyReference.cache
+C:\AP\Modulo_1\10 - ManipulacaoDeStrings\Exercicio1\obj\Debug\net6.0\Exercicio1.GeneratedMSBuildEditorConfig.editorconfig
+C:\AP\Modulo_1\10 - ManipulacaoDeStrings\Exercicio1\obj\Debug\net6.0\Exercicio1.AssemblyInfoInputs.cache
+C:\AP\Modulo_1\10 - ManipulacaoDeStrings\Exercicio1\obj\Debug\net6.0\Exercicio1.AssemblyInfo.cs
+C:\AP\Modulo_1\10 - ManipulacaoDeStrings\Exercicio1\obj\Debug\net6.0\Exercicio1.csproj.CoreCompileInputs.cache
+C:\AP\Modulo_1\10 - ManipulacaoDeStrings\Exercicio1\obj\Debug\net6.0\Exercicio1.dll
+C:\AP\Modulo_1\10 - ManipulacaoDeStrings\Exercicio1\obj\Debug\net6.0\refint\Exercicio1.dll
+C:\AP\Modulo_1\10 - ManipulacaoDeStrings\Exercicio1\obj\Debug\net6.0\Exercicio1.pdb
+C:\AP\Modulo_1\10 - ManipulacaoDeStrings\Exercicio1\obj\Debug\net6.0\Exercicio1.genruntimeconfig.cache
+C:\AP\Modulo_1\10 - ManipulacaoDeStrings\Exercicio1\obj\Debug\net6.0\ref\Exercicio1.dll
