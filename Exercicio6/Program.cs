@@ -2,7 +2,6 @@
 {
     class Program
     {
-        static string estado = "";
         static IEnumerable<string> query = null!;
         static string[] municipios = File.ReadAllLines("Cidades.csv");
 
@@ -12,31 +11,20 @@
 
             switch (opcao)
             {
-                case 1:
-                    query = OrdenarCidadesOrdemAlfabetica();
-                    break;
-                case 2:
-                    query = OrdenarCidadesEstado();
-                    break;
-                case 3:
-                    query = OrdenarCidadesEstado();
-                    break;
-                default:
-                    break;
+                case 1: query = OrdenarCidadesOrdemAlfabetica(); break;
+                case 2: query = OrdenarCidadesEstado(); break;
+                case 3: query = OrdenarCidadesEstado(); break;
+                default: break;
             }
 
             if (opcao == 3)
-            {
-                SolicitarEstado();
-                MostrarCidadesEstadoSolicitado();
-            }
+                MostrarCidadesEstadoSolicitado(SolicitarEstado());
             else
-            {
                 MostrarListaCidadesOrdenada();
-            }
+
         }
 
-        static void MostrarCidadesEstadoSolicitado()
+        static void MostrarCidadesEstadoSolicitado(string estado)
         {
             Console.Clear();
             Console.WriteLine("Aguarde...Carregando dados!");
@@ -111,11 +99,11 @@
             }
         }
 
-        static void SolicitarEstado()
+        static string SolicitarEstado()
         {
             Console.Clear();
             Console.WriteLine("Informe o estado:");
-            estado = Console.ReadLine()!;
+            return Console.ReadLine()!;
         }
 
     }
