@@ -19,6 +19,7 @@
                     novoTexto[i] += (char)valor;
             }
 
+            Console.Clear();
             Console.WriteLine(novoTexto);
 
         }

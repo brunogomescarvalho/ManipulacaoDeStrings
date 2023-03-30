@@ -70,6 +70,7 @@
                 Console.WriteLine("[2] Ordenar Por Estados");
                 Console.WriteLine("[3] Ordenar Municípios Por Estado Determinado");
                 Console.WriteLine("[4] Buscar Município Por Nome");
+                
                 opcao = byte.Parse(Console.ReadLine()!);
 
             } while (opcao != 1 && opcao != 2 && opcao != 3 && opcao != 4);

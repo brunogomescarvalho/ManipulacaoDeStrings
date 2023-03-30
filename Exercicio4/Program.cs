@@ -33,7 +33,8 @@
             terceiro 21*6=126
             resultado 126*7=882
             */
-
+            
+            Console.Clear();
             int valorInical = 0;
             const int GRUPO = 5;
 
