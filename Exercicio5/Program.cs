@@ -4,7 +4,6 @@
     {
         static void Main(string[] args)
         {
-
             Console.Clear();
 
             Console.WriteLine("Informe a frase desejada:");

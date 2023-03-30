@@ -8,7 +8,7 @@
             Console.WriteLine("Informe o texto para encriptografar");
             string texto = Console.ReadLine()!;
 
-            Console.WriteLine("Informe o quantos valores deseja aumentar ");
+            Console.WriteLine("Informe o quantos valores deseja modificar");
             int valor = Convert.ToInt32(Console.ReadLine());
 
             char[] novoTexto = texto.ToCharArray();
