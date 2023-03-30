@@ -13,45 +13,13 @@
             {
                 case 1: listaOrdenada = OrdenarCidadesOrdemAlfabetica(); break;
                 case 2: listaOrdenada = OrdenarCidadesEstado(); break;
-                case 3: listaOrdenada = OrdenarCidadesEstado(); break;
-                default: break;
+                case 3: listaOrdenada = BuscarEstado(SolicitarEstado()); break;
+                case 4: listaOrdenada = BuscarCidade(SolicitarCidade()); break;
             }
 
-            if (opcao == 3)
-                MostrarCidadesEstadoSolicitado(SolicitarEstado());
-            else
-                MostrarListaCidadesOrdenada();
-
+            MostrarListaCidadesOrdenada();
         }
 
-        static void MostrarCidadesEstadoSolicitado(string estado)
-        {
-            Console.Clear();
-            Console.WriteLine("Aguarde...Carregando dados!");
-
-            bool encontrou = false;
-            bool enviandoMenssagemAguarde = true;
-
-            for (int i = 0; i < municipios.Length; i++)
-            {
-                if (listaOrdenada.ElementAt(i).StartsWith($" {estado}", StringComparison.InvariantCultureIgnoreCase))
-                {
-                    encontrou = true;
-                    if (encontrou && enviandoMenssagemAguarde)
-                    {
-                        Console.Clear();
-                        enviandoMenssagemAguarde = false;
-                    }
-
-                    Console.WriteLine(listaOrdenada.ElementAt(i));
-                }
-
-                if (encontrou && listaOrdenada.ElementAt(i)[2] != estado[1])
-                {
-                    break;
-                }
-            }
-        }
 
         static IEnumerable<string> OrdenarCidadesOrdemAlfabetica()
         {
@@ -69,6 +37,25 @@
                    select x[3] + ", " + x[2];
         }
 
+        static IEnumerable<string> BuscarCidade(string cidade)
+        {
+            return from line in municipios
+                   let x = line.Split(';')
+                   where x[2].StartsWith(cidade, StringComparison.InvariantCultureIgnoreCase)
+                   orderby x[3], x[2]
+                   select x[3] + ", " + x[2] + ", " + x[4] + ", " + x[1];
+        }
+
+
+        static IEnumerable<string> BuscarEstado(string estado)
+        {
+            return from line in municipios
+                   let x = line.Split(';')
+                   where x[3].StartsWith(" " + estado, StringComparison.InvariantCultureIgnoreCase)
+                   orderby x[3], x[2]
+                   select x[3] + ", " + x[2];
+        }
+
 
         static byte MostrarMenu()
         {
@@ -82,9 +69,10 @@
                 Console.WriteLine("[1] Ordenar Por Ordem Alfabética");
                 Console.WriteLine("[2] Ordenar Por Estados");
                 Console.WriteLine("[3] Ordenar Municípios Por Estado Determinado");
+                Console.WriteLine("[4] Buscar Município Por Nome");
                 opcao = byte.Parse(Console.ReadLine()!);
 
-            } while (opcao != 1 && opcao != 2 && opcao != 3);
+            } while (opcao != 1 && opcao != 2 && opcao != 3 && opcao != 4);
 
             return opcao;
         }
@@ -103,6 +91,13 @@
         {
             Console.Clear();
             Console.WriteLine("Informe o estado:");
+            return Console.ReadLine()!;
+        }
+
+        static string SolicitarCidade()
+        {
+            Console.Clear();
+            Console.WriteLine("Informe a cidade:");
             return Console.ReadLine()!;
         }
 
