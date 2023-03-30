@@ -42,8 +42,8 @@
             return from line in municipios
                    let x = line.Split(';')
                    where x[2].StartsWith(cidade, StringComparison.InvariantCultureIgnoreCase)
-                   orderby x[3], x[2]
-                   select x[3] + ", " + x[2] + ", " + x[4] + ", " + x[1];
+                   orderby x[2], x[3]
+                   select x[2] + ", " + x[3] + ", " + x[4] + ", " + x[1];
         }
 
 
