@@ -26,21 +26,15 @@
 "05886116467109405077541002256983155200055935729725" +
 "71636269561882670428252483600823257530420752963450";
 
-            /* 
-            Primeiro conjunto de 5 dígitos consecutivos: 73167
-            primeiro  7*3=21
-            segundo 21*1=21
-            terceiro 21*6=126
-            resultado 126*7=882
-            */
-            
             Console.Clear();
             int valorInical = 0;
+            int maiorProduto = 0;
             const int GRUPO = 5;
 
-            for (int i = 0; i < valores.Length / 5; i++)
+            for (int i = 0; i < valores.Length / GRUPO; i++)
             {
                 string valoresAgrupadosString = new string(valores.Substring(valorInical, GRUPO));
+
                 int[] valoresEmInt = new int[valoresAgrupadosString.Length];
 
                 for (int j = 0; j < valoresAgrupadosString.Length; j++)
@@ -56,11 +50,14 @@
                 calculo *= valoresEmInt[3];
                 calculo *= valoresEmInt[4];
 
-                Console.WriteLine($"{i + 1}° - {calculo}");
+                bool ehMaior = maiorProduto < calculo;
+
+                if (ehMaior)
+                    maiorProduto = calculo;
 
                 valorInical += GRUPO;
-
             }
+            Console.WriteLine($"{maiorProduto}");
         }
     }
 }
